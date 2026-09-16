@@ -106,4 +106,4 @@ Substitua `URL_DO_SEU_REPOSITORIO` pelo endereço informado pelo GitHub. Não fa
 
 ## Autores
 
-Adicione aqui o nome completo e o RA dos integrantes antes da entrega.
+Vitor Luiz Santos Mougenot
