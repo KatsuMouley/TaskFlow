@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Acesso negado | TaskFlow{% endblock %}
+{% block content %}
+<div class="card border-0 shadow-sm"><div class="card-body p-5 text-center">
+  <div class="display-4 fw-bold text-danger">403</div>
+  <h1 class="h3 mt-3">Acesso negado</h1>
+  <p class="text-secondary">Você não tem permissão para realizar esta ação.</p>
+  <a class="btn btn-primary" href="{{ url_for('main.dashboard') }}">Voltar ao dashboard</a>
+</div></div>
+{% endblock %}

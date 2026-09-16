@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %}Dashboard | TaskFlow{% endblock %}
+{% block content %}
+<div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-4">
+  <div>
+    <h1 class="h2 mb-1">Dashboard do grupo</h1>
+    <p class="text-secondary mb-0">Visão geral do andamento das atividades.</p>
+  </div>
+  <a href="{{ url_for('tasks.create_task') }}" class="btn btn-primary">+ Nova tarefa</a>
+</div>
+
+<div class="row g-3 mb-4">
+  <div class="col-6 col-lg"><div class="stat-card card h-100 border-0 shadow-sm"><div class="card-body"><span>Total</span><strong>{{ total_tasks }}</strong></div></div></div>
+  <div class="col-6 col-lg"><div class="stat-card pending card h-100 border-0 shadow-sm"><div class="card-body"><span>Pendentes</span><strong>{{ counts.pending }}</strong></div></div></div>
+  <div class="col-6 col-lg"><div class="stat-card progress-card card h-100 border-0 shadow-sm"><div class="card-body"><span>Em andamento</span><strong>{{ counts.in_progress }}</strong></div></div></div>
+  <div class="col-6 col-lg"><div class="stat-card completed card h-100 border-0 shadow-sm"><div class="card-body"><span>Concluídas</span><strong>{{ counts.completed }}</strong></div></div></div>
+  <div class="col-6 col-lg"><div class="stat-card card h-100 border-0 shadow-sm"><div class="card-body"><span>Usuários</span><strong>{{ total_users }}</strong></div></div></div>
+</div>
+
+<div class="card border-0 shadow-sm">
+  <div class="card-header bg-white py-3 d-flex justify-content-between align-items-center">
+    <h2 class="h5 mb-0">Atualizações recentes</h2>
+    <a href="{{ url_for('tasks.list_tasks') }}">Ver todas</a>
+  </div>
+  <div class="list-group list-group-flush">
+    {% for task in recent_tasks %}
+      <div class="list-group-item p-3 d-flex flex-column flex-md-row justify-content-between gap-2">
+        <div>
+          <strong>{{ task.title }}</strong>
+          <div class="small text-secondary">Responsável: {{ task.assignee.name }}</div>
+        </div>
+        <span class="status-badge status-{{ task.status }}">{{ task.status_label }}</span>
+      </div>
+    {% else %}
+      <div class="p-5 text-center text-secondary">Nenhuma tarefa cadastrada ainda.</div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

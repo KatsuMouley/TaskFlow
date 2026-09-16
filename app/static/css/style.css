@@ -1,0 +1,20 @@
+:root { --surface: #f4f6f9; --primary: #5b5ce2; }
+body { background: var(--surface); color: #22252a; min-height: 100vh; }
+.navbar-brand { letter-spacing: -.04em; }
+.btn-primary { background: var(--primary); border-color: var(--primary); }
+.btn-primary:hover { background: #4748c9; border-color: #4748c9; }
+.auth-card { max-width: 470px; margin-top: 5vh; }
+.form-card { max-width: 760px; }
+.stat-card { border-left: 4px solid #6c757d !important; }
+.stat-card.pending { border-left-color: #f0ad4e !important; }
+.stat-card.progress-card { border-left-color: #0d6efd !important; }
+.stat-card.completed { border-left-color: #198754 !important; }
+.stat-card span { display: block; color: #6c757d; font-size: .85rem; }
+.stat-card strong { display: block; font-size: 2rem; line-height: 1.2; margin-top: .4rem; }
+.status-badge { align-self: flex-start; border-radius: 999px; font-size: .78rem; font-weight: 700; padding: .35rem .7rem; white-space: nowrap; }
+.status-pending { background: #fff3cd; color: #856404; }
+.status-in_progress { background: #cfe2ff; color: #084298; }
+.status-completed { background: #d1e7dd; color: #0f5132; }
+.task-card { transition: transform .15s ease, box-shadow .15s ease; }
+.task-card:hover { transform: translateY(-2px); }
+@media (max-width: 575px) { .stat-card strong { font-size: 1.6rem; } }

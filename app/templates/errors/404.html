@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Página não encontrada | TaskFlow{% endblock %}
+{% block content %}
+<div class="card border-0 shadow-sm"><div class="card-body p-5 text-center">
+  <div class="display-4 fw-bold">404</div>
+  <h1 class="h3 mt-3">Página não encontrada</h1>
+  <p class="text-secondary">O endereço informado não existe.</p>
+  <a class="btn btn-primary" href="{{ url_for('main.dashboard') }}">Voltar ao dashboard</a>
+</div></div>
+{% endblock %}
